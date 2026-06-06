@@ -6,4 +6,3 @@ const sql = neon(process.env.DATABASE_URL ?? "");
 console.log("neon pg");
 
 export const db = drizzle(sql);
-
