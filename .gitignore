@@ -4,6 +4,8 @@ node_modules
 .env
 dist
 .wrangler
+.zed
+.tanstack
 
 /test-results/
 /playwright-report/
