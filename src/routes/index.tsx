@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/vue-router";
+import Counter from "~/components/counter.vue";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -6,8 +7,10 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <div class="p-2">
-      <h3>Welcome Home!!!</h3>
+    <div class="m-7">
+      <h3 class="mb-6">Welcome Home!!!</h3>
+
+      <Counter />
     </div>
   );
 }

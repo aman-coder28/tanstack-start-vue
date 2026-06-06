@@ -11,8 +11,8 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/vue-router-devtools";
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
-import styles from "./styles.css?url";
 import { seo } from "~/utils/seo";
+import styles from "./styles.css?url";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -65,18 +65,6 @@ function RootDocument(_: unknown, { slots }: { slots: any }) {
         <HeadContent />
       </head>
       <Body>
-        <div class="p-2 flex gap-2 text-lg">
-          <Link
-            to="/"
-            activeProps={{
-              class: "font-bold",
-            }}
-            activeOptions={{ exact: true }}
-          >
-            Home
-          </Link>
-        </div>
-        <hr />
         {slots.default?.()}
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
