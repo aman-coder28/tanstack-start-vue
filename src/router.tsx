@@ -1,5 +1,5 @@
 import { createRouter } from "@tanstack/vue-router";
-import { DefaultCatchBoundary } from "./components/DefaultCatchBoundary";
+import { DefaultCatchBoundary } from "./components/CatchBoundary";
 import { NotFound } from "./components/NotFound";
 import { routeTree } from "./routeTree.gen";
 

@@ -21,7 +21,13 @@ export default defineConfig({
     nitro({
       preset: "vercel",
     }),
-    tanstackStart(),
+    tanstackStart({
+      server: {
+        build: {
+          inlineCss: true,
+        },
+      },
+    }),
     vue(),
     vueJsx(),
   ],

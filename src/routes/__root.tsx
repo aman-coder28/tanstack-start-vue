@@ -1,18 +1,10 @@
 /// <reference types="vite/client" />
-import {
-  Body,
-  HeadContent,
-  Html,
-  Link,
-  Outlet,
-  Scripts,
-  createRootRoute,
-} from "@tanstack/vue-router";
+import { Body, HeadContent, Html, Outlet, Scripts, createRootRoute } from "@tanstack/vue-router";
 import { TanStackRouterDevtools } from "@tanstack/vue-router-devtools";
-import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
+import { DefaultCatchBoundary } from "~/components/CatchBoundary";
 import { NotFound } from "~/components/NotFound";
 import { seo } from "~/utils/seo";
-import styles from "./styles.css?url";
+import "./styles.css";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -30,7 +22,6 @@ export const Route = createRootRoute({
       }),
     ],
     links: [
-      { rel: "stylesheet", href: styles },
       {
         rel: "apple-touch-icon",
         sizes: "180x180",
@@ -60,7 +51,8 @@ export const Route = createRootRoute({
 
 function RootDocument(_: unknown, { slots }: { slots: any }) {
   return (
-    <Html>
+    // @ts-ignore
+    <Html lang="en">
       <head>
         <HeadContent />
       </head>

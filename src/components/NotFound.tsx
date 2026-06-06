@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/vue-router";
 
-export function NotFound({ children }: { children?: any }) {
+export function NotFound({ children }: { children?: Element }) {
   return (
     <div class="space-y-2 p-2" data-testid="default-not-found-component">
       <div class="text-gray-600 dark:text-gray-400">
