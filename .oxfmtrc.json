@@ -5,5 +5,5 @@
   "sortImports": {
     "newlinesBetween": false
   },
-  "sortTailwindcss": true,
+  "sortTailwindcss": true
 }
