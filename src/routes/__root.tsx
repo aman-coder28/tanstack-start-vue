@@ -57,7 +57,7 @@ function RootDocument(_: unknown, { slots }: { slots: any }) {
         <HeadContent />
       </head>
       <Body>
-        {slots.default?.()}
+        <main role="main">{slots.default?.()}</main>
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
       </Body>
