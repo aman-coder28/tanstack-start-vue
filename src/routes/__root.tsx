@@ -1,10 +1,11 @@
-/// <reference types="vite/client" />
 import { Body, HeadContent, Html, Outlet, Scripts, createRootRoute } from "@tanstack/vue-router";
 import { TanStackRouterDevtools } from "@tanstack/vue-router-devtools";
 import { DefaultCatchBoundary } from "~/components/CatchBoundary";
 import { NotFound } from "~/components/NotFound";
 import { seo } from "~/utils/seo";
 import "./styles.css";
+// @ts-ignore
+import "@fontsource/inter";
 
 export const Route = createRootRoute({
   head: () => ({

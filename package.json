@@ -10,6 +10,7 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
     "@lucide/vue": "^1.17.0",
     "@tanstack/vue-router": "^1.170.15",
     "@tanstack/vue-router-devtools": "^1.167.0",
@@ -26,6 +27,7 @@
     "@types/node": "^25.9.2",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vitejs/plugin-vue-jsx": "^5.1.5",
+    "lefthook": "^2.1.9",
     "nitro": "^3.0.260603-beta",
     "oxfmt": "^0.53.0",
     "tailwindcss": "^4.3.0",
