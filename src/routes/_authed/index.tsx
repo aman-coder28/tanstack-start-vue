@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/vue-router";
 import Counter from "~/components/counter.vue";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/_authed/")({
   component: Home,
 });
 

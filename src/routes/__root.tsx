@@ -1,13 +1,25 @@
-import { Body, HeadContent, Html, Outlet, Scripts, createRootRoute } from "@tanstack/vue-router";
+import { QueryClient } from "@tanstack/vue-query";
+import {
+  Body,
+  HeadContent,
+  Html,
+  Outlet,
+  Scripts,
+  createRootRouteWithContext,
+} from "@tanstack/vue-router";
 import { TanStackRouterDevtools } from "@tanstack/vue-router-devtools";
 import { DefaultCatchBoundary } from "~/components/CatchBoundary";
 import { NotFound } from "~/components/NotFound";
-import { seo } from "~/utils/seo";
 import "./styles.css";
 // @ts-ignore
 import "@fontsource/inter";
+import type { Session } from "~/lib/auth";
+import { seo } from "~/utils/seo";
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+  session: Session;
+}>()({
   head: () => ({
     meta: [
       {
@@ -57,7 +69,7 @@ function RootDocument(_: unknown, { slots }: { slots: any }) {
       <head>
         <HeadContent />
       </head>
-      <Body>
+      <Body class="dark:bg-dark m-6 dark:text-white">
         <main role="main">{slots.default?.()}</main>
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
