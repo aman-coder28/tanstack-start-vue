@@ -4,6 +4,7 @@ import { tanstackStart } from "@tanstack/vue-start/plugin/vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { nitro } from "nitro/vite";
+import Icons from "unplugin-icons/vite";
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -30,5 +31,9 @@ export default defineConfig({
     }),
     vue(),
     vueJsx(),
+    Icons({
+      compiler: "vue3",
+      jsx: "preact",
+    }),
   ],
 });

@@ -6,6 +6,7 @@ dist
 .wrangler
 .zed
 .tanstack
+.vercel
 
 /test-results/
 /playwright-report/
