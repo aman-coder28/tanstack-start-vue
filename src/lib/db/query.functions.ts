@@ -9,7 +9,7 @@ import * as v from "valibot";
 import { db } from ".";
 import { texts, todos } from "./schema";
 
-export const getServerSessionFn = createServerFn({ method: "GET" }).handler(({ context }) => {
+export const getServerSessionFn = createServerFn({ method: "GET" }).handler(async ({ context }) => {
   return context.session;
 });
 
@@ -40,8 +40,6 @@ export function ServerSessionQueryOptions() {
   return queryOptions({
     queryKey: ["user"],
     queryFn: async () => {
-      await new Promise((r) => setTimeout(r, 3000));
-
       const user = await getServerSessionFn();
 
       return user;

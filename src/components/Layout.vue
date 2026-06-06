@@ -2,6 +2,7 @@
 import { useQuery } from "@tanstack/vue-query";
 import { Outlet } from "@tanstack/vue-router";
 import { ServerSessionQueryOptions } from "@/lib/db/query.functions";
+
 const { data, suspense } = useQuery(() => ServerSessionQueryOptions());
 
 await suspense();
