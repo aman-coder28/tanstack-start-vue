@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/vue-router";
-import { createServerFn } from "@tanstack/vue-start";
 
 export const Route = createFileRoute("/")({
   component: Home,

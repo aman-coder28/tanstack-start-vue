@@ -5,7 +5,6 @@
   "sideEffects": false,
   "scripts": {
     "dev": "vite dev",
-    "dev:e2e": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
     "cf-typegen": "wrangler types"
@@ -17,16 +16,15 @@
     "vue": "^3.5.35"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.40.0",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/vite": "^4.3.0",
     "@types/node": "^25.9.2",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vitejs/plugin-vue-jsx": "^5.1.5",
     "nitro": "^3.0.260603-beta",
+    "oxfmt": "^0.53.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3",
-    "vite": "^8.0.16",
-    "wrangler": "^4.98.0"
+    "vite": "^8.0.16"
   }
 }
