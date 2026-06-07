@@ -125,3 +125,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease-in-out;
+  top: 18;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(30px);
+  opacity: 0;
+  top: 18;
+}

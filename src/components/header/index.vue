@@ -2,12 +2,16 @@
 import { Link, useLocation } from "@tanstack/vue-router";
 import IconCirclePlusFilled from "virtual:icons/tabler/circle-plus-filled";
 import IconSearch from "virtual:icons/tabler/search";
-import Button from "@/components/ui/button/Button.vue";
+import { ref } from "vue";
 import type { User } from "@/lib/auth";
-import { signInWithGithub, signOut } from "@/lib/auth/client";
+import { signInWithGithub } from "@/lib/auth/client";
+import Button from "../ui/button/Button.vue";
+import DropDown from "./dropdown.vue";
 
 const props = defineProps<{ user?: User }>();
 const location = useLocation();
+
+const open = ref(false);
 </script>
 
 <template>
@@ -31,7 +35,7 @@ const location = useLocation();
             <IconCirclePlusFilled strokeWidth="1.8" class="size-6.5" />
           </Link>
 
-          <button @click="() => null" title="User Avatar" type="button">
+          <button @click="() => (open = !open)" title="User Avatar" type="button">
             <img
               :alt="user?.name ?? ''"
               class="size-6 rounded-full bg-white"
@@ -42,10 +46,14 @@ const location = useLocation();
             />
           </button>
 
-          <!-- <Transition name="slide-fade">
-             <UserInfoDropDown email={props.user?.email ?? "" } image={props.user?.image ?? "" } name={props.user?.name
-              ?? "" } />
-          </Transition> -->
+          <Transition name="slide">
+            <DropDown
+              v-if="open"
+              :email="user?.email ?? ''"
+              :image="user?.image ?? ''"
+              :name="user?.name ?? ''"
+            />
+          </Transition>
         </div>
 
         <section v-if="!user?.email">

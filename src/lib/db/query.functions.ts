@@ -71,7 +71,7 @@ export function GetTextQueryOptions(slug: string) {
 }
 
 export const getTextFn = createServerFn({ method: "GET" })
-  .inputValidator(slug)
+  .validator(slug)
   .handler(async ({ context, data }) => {
     const task = await db
       .select()
@@ -85,7 +85,7 @@ export const getTextFn = createServerFn({ method: "GET" })
   });
 
 export const getTextsFn = createServerFn({ method: "GET" })
-  .inputValidator(slug)
+  .validator(slug)
   .handler(async ({ context, data }) => {
     const tasks = await db
       .select()
@@ -120,7 +120,7 @@ export function getTudosQueryOptions() {
 }
 
 export const getTodoFn = createServerFn()
-  .inputValidator(slug)
+  .validator(slug)
   .handler(async ({ context, data }) => {
     const tudo = await db
       .select()
@@ -139,7 +139,7 @@ export function getTudoQueryOptions(slug: string) {
 }
 
 export const createTextFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       text: v.string(),
       tudo: v.string(),
@@ -160,7 +160,7 @@ export const createTextFn = createServerFn({ method: "POST" })
   });
 
 export const createTudoFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       title: v.string(),
       description: v.string(),
@@ -180,7 +180,7 @@ export const createTudoFn = createServerFn({ method: "POST" })
   });
 
 export const updateTudoFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       title: v.string(),
       description: v.string(),
@@ -199,7 +199,7 @@ export const updateTudoFn = createServerFn({ method: "POST" })
   });
 
 export const updateTaskCompletedFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       completed: v.boolean(),
       slug: v.string(),
@@ -218,7 +218,7 @@ export const updateTaskCompletedFn = createServerFn({ method: "POST" })
   });
 
 export const updateTudoCompletedFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       slug: v.string(),
       completed: v.boolean(),
@@ -237,7 +237,7 @@ export const updateTudoCompletedFn = createServerFn({ method: "POST" })
   });
 
 export const updateTaskFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       text: v.string(),
       slug: v.string(),
@@ -254,7 +254,7 @@ export const updateTaskFn = createServerFn({ method: "POST" })
   });
 
 export const deleteTudoFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       slug: v.string(),
     }),
@@ -269,7 +269,7 @@ export const deleteTudoFn = createServerFn({ method: "POST" })
   });
 
 export const deleteTaskFn = createServerFn({ method: "POST" })
-  .inputValidator(
+  .validator(
     v.object({
       slug: v.string(),
     }),
