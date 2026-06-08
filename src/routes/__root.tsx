@@ -68,6 +68,7 @@ function RootDocument(_: unknown, { slots }: { slots: any }) {
     <Html lang="en">
       <head>
         <HeadContent />
+<script>{`if(localStorage.getItem("theme")==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.classList.add("dark"),localStorage.setItem("theme","dark"); else document.documentElement.classList.add("light"), localStorage.setItem("theme","light");`}</script>
       </head>
       <Body class="dark:bg-dark dark:text-white">
         {slots.default?.()}
