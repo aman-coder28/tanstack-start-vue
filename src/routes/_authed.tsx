@@ -15,7 +15,7 @@ function RootComponent() {
   const { data } = useQuery(() => ServerSessionQueryOptions());
 
   return (
-    <div class="mx-3">
+    <div class="mx-6">
       <NavBar user={data?.value?.user} />
 
       {data?.value?.user?.name ? (
