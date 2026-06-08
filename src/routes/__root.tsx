@@ -69,7 +69,7 @@ function RootDocument(_: unknown, { slots }: { slots: any }) {
       <head>
         <HeadContent />
       </head>
-      <Body class="dark:bg-dark m-4 dark:text-white">
+      <Body class="dark:bg-dark dark:text-white">
         {slots.default?.()}
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
