@@ -15,7 +15,7 @@ function RootComponent() {
   const { data } = useQuery(() => ServerSessionQueryOptions());
 
   return (
-    <>
+    <div class="mx-3">
       <NavBar user={data?.value?.user} />
 
       {data?.value?.user?.name ? (
@@ -25,6 +25,6 @@ function RootComponent() {
       ) : (
         <h1>Not Logged In</h1>
       )}
-    </>
+    </div>
   );
 }
