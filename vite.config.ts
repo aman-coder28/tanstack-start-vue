@@ -23,11 +23,11 @@ export default defineConfig({
       preset: "vercel",
     }),
     tanstackStart({
-      server: {
-        build: {
-          inlineCss: true,
-        },
-      },
+      // server: {
+      //   build: {
+      //     inlineCss: true,
+      //   },
+      // },
     }),
     vue(),
     vueJsx(),
