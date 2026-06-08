@@ -8,6 +8,8 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { lazyRouteComponent } from '@tanstack/vue-router'
+
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as AuthedRouteImport } from './routes/_authed'
 import { Route as AuthedIndexRouteImport } from './routes/_authed/index'
@@ -16,7 +18,12 @@ import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 const AuthedRoute = AuthedRouteImport.update({
   id: '/_authed',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).update({
+  component: lazyRouteComponent(
+    () => import('./routes/_authed.component.vue'),
+    'default',
+  ),
+})
 const AuthedIndexRoute = AuthedIndexRouteImport.update({
   id: '/',
   path: '/',

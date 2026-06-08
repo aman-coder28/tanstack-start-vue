@@ -10,11 +10,11 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/vue-router-devtools";
 import { DefaultCatchBoundary } from "~/components/CatchBoundary";
 import { NotFound } from "~/components/NotFound";
-import "./styles.css";
+import type { Session } from "~/lib/auth";
 // @ts-ignore
 import "@fontsource/inter";
-import type { Session } from "~/lib/auth";
 import { seo } from "~/utils/seo";
+import styles from "./styles.css?url";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -35,6 +35,7 @@ export const Route = createRootRouteWithContext<{
       }),
     ],
     links: [
+      { rel: "stylesheet", href: styles },
       {
         rel: "apple-touch-icon",
         sizes: "180x180",
