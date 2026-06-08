@@ -65,7 +65,7 @@ export const Route = createRootRouteWithContext<{
 function RootDocument(_: unknown, { slots }: { slots: any }) {
   return (
     // @ts-ignore
-    <Html lang="en">
+    <Html lang="en" class="dark">
       <head>
         <HeadContent />
 <script>{`if(localStorage.getItem("theme")==="dark"||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.classList.add("dark"),localStorage.setItem("theme","dark"); else document.documentElement.classList.add("light"), localStorage.setItem("theme","light");`}</script>
