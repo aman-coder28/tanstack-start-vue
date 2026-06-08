@@ -126,6 +126,14 @@
   }
 }
 
+@theme {
+  --color-dark: #0f0f0f;
+  --color-bleck: #4d4d4d;
+  --animate-flip: flip 0.4s ease-out forwards;
+  --animate-reveal: reveal 1.5s ease-in-out forwards;
+  --color-gray: #f1f6ef;
+}
+
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.3s ease-in-out;
