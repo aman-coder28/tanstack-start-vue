@@ -16,7 +16,7 @@ const open = ref(false);
 
 <template>
   <header>
-    <nav class="mt-8 mb-6 flex w-full items-center justify-between gap-4">
+    <nav class="mt-8 mb-6 flex w-full items-center justify-between">
       <div>
         <Link class="text-xl font-bold tracking-wide" to="/"> Tudos </Link>
       </div>
