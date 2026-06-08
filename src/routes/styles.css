@@ -3,12 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@layer base {
-  html {
-    color-scheme: light dark;
-  }
-}
-
 @theme inline {
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -117,20 +111,18 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
+/** @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} **/
 
 @theme {
   --color-dark: #0f0f0f;
   --color-bleck: #4d4d4d;
-  --animate-flip: flip 0.4s ease-out forwards;
-  --animate-reveal: reveal 1.5s ease-in-out forwards;
   --color-gray: #f1f6ef;
 }
 
