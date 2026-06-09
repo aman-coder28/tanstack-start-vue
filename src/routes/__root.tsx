@@ -14,7 +14,7 @@ import type { Session } from "~/lib/auth";
 // @ts-ignore
 import "@fontsource/inter";
 import { seo } from "~/utils/seo";
-import styles from "./styles.css?url";
+import "./styles.css";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
@@ -35,7 +35,6 @@ export const Route = createRootRouteWithContext<{
       }),
     ],
     links: [
-      { rel: "stylesheet", href: styles },
       {
         rel: "apple-touch-icon",
         sizes: "180x180",
