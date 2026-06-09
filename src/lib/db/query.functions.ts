@@ -1,9 +1,6 @@
 import { queryOptions } from "@tanstack/vue-query";
 import { createServerFn } from "@tanstack/vue-start";
 import { and, eq } from "drizzle-orm";
-import { Marked } from "marked";
-import { markedHighlight } from "marked-highlight";
-import prism from "prismjs";
 import slugify from "slug";
 import * as v from "valibot";
 import { db } from ".";
@@ -12,29 +9,6 @@ import { texts, todos } from "./schema";
 export const getServerSessionFn = createServerFn({ method: "GET" }).handler(async ({ context }) => {
   return context.session;
 });
-
-async function ParseToHTML(text: string) {
-  const marked = new Marked(
-    markedHighlight({
-      async: true,
-      highlight: (code, lang) => {
-        if (prism.languages[lang]) {
-          return prism.highlight(code, prism.languages[lang], lang);
-        } else {
-          return code;
-        }
-      },
-    }),
-  );
-
-  marked.use({
-    async: true,
-    pedantic: false,
-    gfm: true,
-  });
-
-  return await marked.parse(text);
-}
 
 export function ServerSessionQueryOptions() {
   return queryOptions({
