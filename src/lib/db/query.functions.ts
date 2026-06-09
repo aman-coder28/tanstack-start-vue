@@ -13,7 +13,7 @@ export const getServerSessionFn = createServerFn({ method: "GET" }).handler(asyn
   return context.session;
 });
 
-export async function ParseToHTML(text: string) {
+async function ParseToHTML(text: string) {
   const marked = new Marked(
     markedHighlight({
       async: true,
